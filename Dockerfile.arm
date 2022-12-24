@@ -1,4 +1,4 @@
-FROM golang:1.18.1 as builder
+FROM golang:1.19.4 as builder
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ RUN GOOS=linux GOARCH=arm GOARM=5 CGO_ENABLED=0 go build
 
 FROM alpine:3.16.2
 
-COPY --from=builder /app/ecowitt-statsd /bin/ecowitt-statsd
-WORKDIR /var/lib/ecowitt-statsd/
+COPY --from=builder /app/starlink-statsd /bin/starlink-statsd
+WORKDIR /var/lib/starlink-statsd/
 
-CMD ["/bin/ecowitt-statsd"]
+CMD ["/bin/starlink-statsd"]
