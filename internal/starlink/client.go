@@ -19,10 +19,10 @@ type Client interface {
 
 type client struct {
 	addr         string
-	deploymentId int64
+	deploymentId string
 }
 
-func NewClient(address string, deploymentId int64) Client {
+func NewClient(address string, deploymentId string) Client {
 	client := &client{
 		addr:         address,
 		deploymentId: deploymentId,
@@ -76,7 +76,7 @@ func (c *client) emitStats(status *pb.DishGetStatusResponse) {
 			fmt.Sprintf("%s:%s", "countryCode", status.DeviceInfo.CountryCode),
 		}
 		tags = append(tags, standardTags...)
-		metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "deviceinfo"), tags, float64(c.deploymentId))
+		metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "deviceinfo"), tags, float64(0))
 		metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "generationnumber"), standardTags, float64(status.DeviceInfo.GenerationNumber))
 		metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "utcoffsets"), standardTags, float64(status.DeviceInfo.UtcOffsetS))
 		metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "bootcount"), standardTags, float64(status.DeviceInfo.Bootcount))

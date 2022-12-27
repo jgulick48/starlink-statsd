@@ -40,14 +40,14 @@ func main() {
 var (
 	statsDHost   = "127.0.0.1:8125"
 	addr         = "192.168.100.1:9200"
-	deploymentId = int64(0)
+	deploymentId = "Dishy"
 	scanInterval = int64(30)
 )
 
 func init() {
 	flag.StringVar(&addr, "addr", addr, "grpc addr (dishy is at 192.168.100.1:9200, wifi is at 192.168.1.1:9000")
 	flag.StringVar(&statsDHost, "statsDHost", statsDHost, "statsD address")
-	flag.Int64Var(&deploymentId, "deploymentId", deploymentId, "unique Id for this deployment, defaults to 0")
+	flag.StringVar(&deploymentId, "deploymentId", deploymentId, "unique Id for this deployment, defaults to Dishy")
 	flag.Int64Var(&scanInterval, "scanInterval", scanInterval, "interval in which to scan data from the dish in seconds, defaults to 30")
 	flag.Parse()
 }
