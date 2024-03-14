@@ -1,6 +1,6 @@
 module github.com/jgulick48/starlink-statsd
 
-go 1.18
+go 1.21
 
 require (
 	github.com/DataDog/datadog-go v4.8.3+incompatible

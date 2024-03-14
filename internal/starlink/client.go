@@ -132,7 +132,7 @@ func (c *client) emitStats(status *pb.DishGetStatusResponse) {
 	metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "classofservice"), append([]string{status.ClassOfService.String()}, standardTags...), float64(status.ClassOfService))
 	metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "softwareupdatestate"), append([]string{status.SoftwareUpdateState.String()}, standardTags...), float64(status.SoftwareUpdateState))
 	metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "hasactuators"), append([]string{status.SoftwareUpdateState.String()}, standardTags...), float64(status.SoftwareUpdateState))
-	metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "disablementcode"), append([]string{status.SoftwareUpdateState.String()}, standardTags...), float64(status.SoftwareUpdateState))
+	metrics.SendGaugeMetric(fmt.Sprintf("%s.%s", metricsNamespace, "disablementcode"), append([]string{status.DisablementCode.String()}, standardTags...), float64(status.DisablementCode))
 }
 
 func boolToFloat64(val bool) float64 {
