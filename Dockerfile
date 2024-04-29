@@ -17,6 +17,7 @@ RUN GOOS=linux CGO_ENABLED=0 go build
 
 FROM ${ARCH}alpine:3.16.2
 
-COPY --from=builder /app/ecowitt-statsd /bin/ecowitt-statsd
+COPY --from=builder /app/starlink-statsd /bin/starlink-statsd
+WORKDIR /var/lib/starlink-statsd/
 
-CMD ["/bin/rv-homekit","-configFile=/var/lib/rv-homekit/config.json"]
+CMD ["/bin/starlink-statsd"]
