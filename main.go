@@ -25,6 +25,7 @@ func main() {
 		done <- true
 	}()
 	var err error
+	log.Printf("Got the following config values:\naddr: %s\nstatsDhost: %s\ndeploymentId: %s\n, scanInterval: %v\n", addr, statsDHost, deploymentId, scanInterval)
 	metrics.Metrics, err = statsd.New(statsDHost)
 	if err != nil {
 		log.Printf("Error creating stats client %s", err.Error())
