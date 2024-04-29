@@ -15,7 +15,7 @@ RUN go test ./...
 
 RUN GOOS=linux CGO_ENABLED=0 go build
 
-FROM ${ARCH}alpine:3.16.2
+FROM ${ARCH}alpine:3.19.1
 
 COPY --from=builder /app/starlink-statsd /bin/starlink-statsd
 WORKDIR /var/lib/starlink-statsd/
