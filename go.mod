@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/DataDog/datadog-go v4.8.3+incompatible
 	google.golang.org/grpc v1.63.2
-	google.golang.org/protobuf v1.33.0
+	google.golang.org/protobuf v1.34.1
 )
 
 require (
