@@ -4,6 +4,7 @@ go 1.21
 
 require (
 	github.com/DataDog/datadog-go v4.8.3+incompatible
+	github.com/DataDog/datadog-go/v5 v5.8.3
 	google.golang.org/grpc v1.63.2
 	google.golang.org/protobuf v1.33.0
 )
@@ -11,7 +12,7 @@ require (
 require (
 	github.com/Microsoft/go-winio v0.5.2 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
-	github.com/stretchr/testify v1.8.0 // indirect
+	github.com/stretchr/testify v1.8.1 // indirect
 	golang.org/x/net v0.21.0 // indirect
 	golang.org/x/sys v0.17.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
