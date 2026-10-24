@@ -1,11 +1,11 @@
 module github.com/jgulick48/starlink-statsd
 
-go 1.21
+go 1.23
 
 require (
 	github.com/DataDog/datadog-go v4.8.3+incompatible
 	google.golang.org/grpc v1.63.2
-	google.golang.org/protobuf v1.33.0
+	google.golang.org/protobuf v1.36.12
 )
 
 require (
